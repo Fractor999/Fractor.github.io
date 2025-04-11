@@ -1,0 +1,474 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: url('Imagenes/FondoPrincipal.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #f5f5f5;
+    position: relative;
+    font-family: Arial, sans-serif;
+}
+
+.menu-principal {
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+    margin-right: 2rem; /* Espacio entre el logo y los items del menú */
+}
+
+.menu-items {
+    display: flex;
+    justify-content: center; /* Centra los items del menú */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1; /* Permite que el menú ocupe el espacio disponible */
+}
+
+.menu-items li {
+    margin: 0 1rem;
+}
+
+.menu-items a {
+    text-decoration: none;
+    color: white; 
+    font-weight: 500;
+    transition: color 0.3s ease; 
+}
+
+.menu-items a:hover {
+    color: #4CAF50; 
+}
+
+.menu-derecha {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 2rem; /* Espacio entre los items del menú y la cuenta */
+}
+
+/* Se puede eliminar cualquier estilo específico del carrito */
+
+.menu-derecha a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.menu-derecha a:hover {
+    color: #4CAF50;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.logo a:hover {
+    color: #4CAF50;
+}
+
+.productos-destacados {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.productos-destacados h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: rgba(9, 255, 0, 0.511);
+    font-size: 2em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    font-weight: bold; 
+}
+
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.producto-card {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro transparente */
+    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo cuando el panel está vacío */
+.producto-card:empty {
+    background: rgba(255, 255, 255, 0.2); /* Más transparente cuando está vacío */
+    border: 1px dashed rgba(224, 224, 224, 0.3);
+}
+
+/* Estilo cuando el panel tiene contenido */
+.producto-card:not(:empty) {
+    background: rgba(0, 0, 0, 0.374); /* Menos transparente con contenido */
+}
+
+.producto-card:hover {
+    transform: translateY(-5px);
+    background: rgba(0, 0, 0, 0.8); /* Un poco más oscuro al hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo para la información del producto cuando está vacía */
+.producto-info:empty {
+    min-height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.producto-imagen {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.producto-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.producto-info {
+    padding: 1.5rem;
+}
+
+.producto-info h3 {
+    color: #fff; /* Texto blanco para el título */
+    margin: 0 0 0.5rem 0;
+}
+
+.producto-info .descripcion {
+    color: rgba(255, 255, 255, 0.8); /* Texto blanco semi-transparente para la descripción */
+}
+
+.producto-info .precio {
+    color: #4CAF50; /* Color verde para el precio */
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.precio {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #2c8237;
+    margin: 0.5rem 0;
+}
+
+.descripcion {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.btn-agregar-carrito {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.btn-agregar-carrito:hover {
+    background-color: #45a049;
+}
+
+.btn-ver-mas {
+    background-color: transparent;
+    color: #4CAF50;
+    border: 2px solid #4CAF50;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-ver-mas:hover {
+    background-color: #4CAF50;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.4);
+}
+
+.subir-producto {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+    color: white;
+}
+
+.subir-producto h2 {
+    text-align: center;
+    color: #4CAF50;
+    margin-bottom: 2rem;
+}
+
+.formulario-producto {
+    display: grid;
+    gap: 2rem;
+}
+
+.zona-arrastre {
+    border: 2px dashed #4CAF50;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.zona-arrastre:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.zona-arrastre i {
+    font-size: 3rem;
+    color: #4CAF50;
+    margin-bottom: 1rem;
+}
+
+.zona-arrastre input[type="file"] {
+    display: none;
+}
+
+.campo {
+    margin-bottom: 1.5rem;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #4CAF50;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #4CAF50;
+    border-radius: 4px;
+    color: white;
+}
+
+.select-oscuro {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: 1px solid #4CAF50;
+    padding: 0.75rem;
+    border-radius: 4px;
+    width: 100%;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+}
+
+.select-oscuro option {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 10px;
+}
+
+.select-oscuro:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-color: #45a049;
+}
+
+.select-oscuro:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.3);
+}
+
+.btn-seleccionar,
+.btn-publicar {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-seleccionar:hover,
+.btn-publicar:hover {
+    background-color: #45a049;
+}
+
+.registro-usuario {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.formulario-container {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.formulario-container h2 {
+    color: #4CAF50;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.campo {
+    margin-bottom: 1.5rem;
+}
+
+.campo label {
+    display: block;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.campo input {
+    width: 100%;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #4CAF50;
+    border-radius: 4px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.campo input:focus {
+    outline: none;
+    border-color: #45a049;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.3);
+}
+
+.btn-registrar {
+    width: 100%;
+    padding: 0.75rem;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-registrar:hover {
+    background: #45a049;
+}
+
+.separador {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 1.5rem 0;
+    color: white;
+}
+
+.separador::before,
+.separador::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.separador span {
+    padding: 0 10px;
+}
+
+.login-link {
+    text-align: center;
+    color: white;
+}
+
+.login-link a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+.qr-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    padding: 2rem;
+}
+
+.qr-container h2 {
+    color: rgba(76, 175, 80, 0.8);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.qr-code {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.qr-code img {
+    max-width: 300px;
+    height: auto;
+}
+
+.qr-description {
+    margin-top: 1.5rem;
+    color: white;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 480px) {
+    .formulario-container {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .subir-producto {
+        margin: 1rem;
+        padding: 1rem;
+    }
+}
